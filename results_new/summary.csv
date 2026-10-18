@@ -1,0 +1,2 @@
+algorithm,best_param,best_weight,final_avg_reward,contextual
+ucb,0,0.5,-6.037232581431025,False

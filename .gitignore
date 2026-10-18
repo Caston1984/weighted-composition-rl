@@ -1,0 +1,56 @@
+# ==========================================================================
+# Python / env
+# ==========================================================================
+__pycache__/
+**/__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+.ipynb_checkpoints/
+
+# ==========================================================================
+# Local-only working trees (kept off the public repo)
+# ==========================================================================
+archive/
+# old/stale result artifacts (superseded by results_new/)
+results/
+
+# ==========================================================================
+# Experiment outputs are regenerable via run_experiments.py.
+# We DO commit the final figures + CSVs under results_new/ for the paper,
+# but ignore scratch logs and video monitor dumps.
+# ==========================================================================
+results_new/run.log
+experiment_weighted_or/
+experiment_or/
+experiment_approx_and/
+experiment_temporal/
+*.mp4
+*.json.lock
+
+# ==========================================================================
+# Model dirs: keep only the trained weights (model.dqn). The old gym Monitor
+# dumps (stats json, episode videos, meta) are not needed to run anything.
+# ==========================================================================
+models/**/openaigym.*
+models/**/*.mp4
+models/**/*.meta.json
+models/**/*.stats.json
+
+# Unused base-skill model dirs: only beige_crate and purple_circle are used by
+# the composition experiments; the rest are large and not referenced.
+models/*
+!models/beige_crate/
+!models/beige_crate/model.dqn
+!models/purple_circle/
+!models/purple_circle/model.dqn
+
+# ==========================================================================
+# OS / editor
+# ==========================================================================
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
