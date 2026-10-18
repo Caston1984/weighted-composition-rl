@@ -34,11 +34,11 @@ python run_experiments.py --iters 300 --seeds 0 43 51
 python run_experiments.py --iters 1000 --seeds 0 43 51 79 101
 ```
 
-The figures in `results_new/` were generated with `--iters 300 --seeds 0 43 51`
+The figures in `results/` were generated with `--iters 300 --seeds 0 43 51`
 on CPU. The reward curves converge well before 300 iterations, so the trends
 match the paper; using more seeds/iterations tightens the confidence bands.
 
-Outputs land in `results_new/`:
+Outputs land in `results/`:
 - `rewards_<algo>.csv` — mean ± std average-reward curve per algorithm
 - `arms_<algo>.csv` — weight-selection distribution (finite bandits)
 - `summary.csv` — best weight, best param and final reward per algorithm
@@ -87,6 +87,32 @@ This is a cleaned, reproducible version of the original research code:
 
 The contextual experiments use a randomly-generated synthetic context exactly as
 described in the paper (Section 5.3); this is intentional and preserved.
+
+## How to cite
+
+This repository is the companion code for:
+
+> *Weighted composition for entropy-regularised reinforcement learning.*
+> ORiON (Journal of the Operations Research Society of South Africa).
+> DOI: [10.5784/41-2-784](https://doi.org/10.5784/41-2-784) ·
+> Article: https://orion.journals.ac.za/pub/article/view/784
+
+BibTeX (fill in the author list / year from the published version):
+
+```bibtex
+@article{nyabadza2026weighted,
+  title   = {Weighted composition for entropy-regularised reinforcement learning},
+  author  = {Nyabadza, Caston and Rosman, Benjamin and James, Steven and Nangue Tasse, Geraud},
+  journal = {ORiON},
+  volume  = {41},
+  number  = {2},
+  year    = {2026},
+  doi     = {10.5784/41-2-784},
+  url     = {https://orion.journals.ac.za/pub/article/view/784}
+}
+```
+
+If you use this code, please cite the paper above.
 
 ## Credits
 

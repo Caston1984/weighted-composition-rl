@@ -1,0 +1,32 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the associated paper below."
+title: "Weighted composition for entropy-regularised reinforcement learning (companion code)"
+authors:
+  - family-names: "Nyabadza"
+    given-names: "Caston"
+  - family-names: "Rosman"
+    given-names: "Benjamin"
+  - family-names: "James"
+    given-names: "Steven"
+  - family-names: "Nangue Tasse"
+    given-names: "Geraud"
+repository-code: "https://github.com/Caston1984/weighted-composition-rl"
+license: CC-BY-4.0
+preferred-citation:
+  type: article
+  title: "Weighted composition for entropy-regularised reinforcement learning"
+  authors:
+    - family-names: "Nyabadza"
+      given-names: "Caston"
+    - family-names: "Rosman"
+      given-names: "Benjamin"
+    - family-names: "James"
+      given-names: "Steven"
+    - family-names: "Nangue Tasse"
+      given-names: "Geraud"
+  journal: "ORiON"
+  year: 2026
+  volume: 41
+  issue: 2
+  doi: "10.5784/41-2-784"
+  url: "https://orion.journals.ac.za/pub/article/view/784"

@@ -20,7 +20,7 @@ USAGE
     # a subset of algorithms
     python run_experiments.py --algos softmax ucb hoo --iters 200
 
-Outputs (under ./results_new/):
+Outputs (under ./results/):
     rewards_<algo>.csv        mean +/- std average-reward curve per algorithm
     arms_<algo>.csv           weight-selection distribution per algorithm
     summary.csv               best weight +/- std and final avg reward per algo
@@ -49,7 +49,7 @@ import matplotlib.pyplot as plt
 from composition_reward import composed_reward
 from algorithms import Zooming
 
-OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "results_new")
+OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "results")
 N_WEIGHTS = 11          # discrete weights 0.0, 0.1, ..., 1.0 (finite bandits)
 MAX_TRAJECTORY = 50
 

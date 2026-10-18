@@ -13,15 +13,13 @@ venv/
 # Local-only working trees (kept off the public repo)
 # ==========================================================================
 archive/
-# old/stale result artifacts (superseded by results_new/)
-results/
 
 # ==========================================================================
 # Experiment outputs are regenerable via run_experiments.py.
-# We DO commit the final figures + CSVs under results_new/ for the paper,
-# but ignore scratch logs and video monitor dumps.
+# We DO commit the final figures + CSVs under results/ for the paper,
+# but ignore the scratch run log and video monitor dumps.
 # ==========================================================================
-results_new/run.log
+results/run.log
 experiment_weighted_or/
 experiment_or/
 experiment_approx_and/
