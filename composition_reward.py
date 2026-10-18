@@ -2,7 +2,7 @@
 composition_reward.py — shared reward for the weighted-composition bandit.
 
 This is the single, canonical reward used by every bandit algorithm in this
-repository (Softmax, UCB, EXP3, LinUCB, LinTS, HOO, Zooming). It replaces the
+repository (Softmax, UCB, EXP3, LinUCB, LinTS, HOO). It replaces the
 duplicated/inconsistent `MaxLength.reward(...)` calls that previously lived in
 experiment_weighted_or.py and were invoked inconsistently across files (some
 abusing the constructor as `MaxLength(gym.Wrapper, 50)`, some unpacking a tuple
