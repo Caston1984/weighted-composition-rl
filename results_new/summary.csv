@@ -1,2 +1,8 @@
 algorithm,best_param,best_weight,final_avg_reward,contextual
-zooming,0,,-5.313874459467522,False
+ucb,1.0,0.4,-5.070010911244984,False
+softmax,0.2,0.30000000000000004,-5.0369276888124626,False
+exp3,0.2,0.0,-5.343858035629835,False
+ts,0.1,0.5,-5.246930460502928,False
+zooming,2.0,,-5.332804076877001,False
+linucb,0.0,,-5.1631357029064056,True
+lints,0.0,,-6.315102278724255,True
