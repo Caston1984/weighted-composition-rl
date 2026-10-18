@@ -47,6 +47,7 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
 from composition_reward import composed_reward
+from algorithms import Zooming
 
 OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "results_new")
 N_WEIGHTS = 11          # discrete weights 0.0, 0.1, ..., 1.0 (finite bandits)
@@ -151,6 +152,27 @@ def run_linucb(alpha, iters, n_arms=N_WEIGHTS, d=10):
     return curve, None
 
 
+# ==========================================================================
+# Continuous-armed bandit: Zooming (Lipschitz). The weight space is the
+# continuous interval [0, 1]; the arm returned is used directly as the
+# composition weight. Uses the upstream Zooming implementation in algorithms.py.
+# ==========================================================================
+def run_zooming(c, iters):
+    # delta/T/nu follow the upstream defaults; c is the swept exploration scale.
+    z = Zooming(delta=0.1, T=iters, c=c, nu=1.0)
+    z.initialize()
+    mean_reward, curve = 0.0, np.zeros(iters)
+    for t in range(iters):
+        idx = z.output()
+        arm = z.active_arms[idx]
+        arm = min(max(arm, 0.0), 1.0)   # weight must be a valid [0,1] composition
+        r, _ = composed_reward(MAX_TRAJECTORY, arm)
+        z.observe(t + 1, r)
+        mean_reward += (r - mean_reward) / (t + 1)
+        curve[t] = mean_reward
+    return curve, None
+
+
 def run_lints(R, iters, n_arms=N_WEIGHTS, d=10):
     B = np.identity(d)
     f = np.zeros((d, 1))
@@ -183,6 +205,7 @@ ALGORITHMS = {
     "softmax": (run_softmax,  [0.1, 0.2, 0.3, 0.4, 0.5],              False),
     "exp3":    (run_exp3,     [0.1, 0.2, 0.3, 0.4, 0.5],              False),
     "ts":      (run_thompson, [0.1, 0.2, 0.3, 0.4, 0.5],              False),
+    "zooming": (run_zooming,  [0, SQRT(1), SQRT(2), SQRT(3), SQRT(4)], False),
     "linucb":  (run_linucb,   [0, SQRT(1), SQRT(2), SQRT(3), SQRT(4)], True),
     "lints":   (run_lints,    [0, 0.01, 0.5, 1.0, SQRT(2)],           True),
 }
