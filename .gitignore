@@ -16,10 +16,13 @@ archive/
 
 # ==========================================================================
 # Experiment outputs are regenerable via run_experiments.py.
-# We DO commit the final figures + CSVs under results/ for the paper,
-# but ignore the scratch run log and video monitor dumps.
+# The CURRENT results live in results_new/ (committed, for the paper).
+# The old results/ folder from the original repo is obsolete -> ignored.
+# Also ignore the scratch run log and gym Monitor video/stat dumps.
 # ==========================================================================
-results/run.log
+results/
+results_new/run_full.log
+results_new/run.log
 experiment_weighted_or/
 experiment_or/
 experiment_approx_and/
