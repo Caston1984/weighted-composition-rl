@@ -15,7 +15,7 @@ Three bandit settings are compared, following the paper:
 | Setting | Algorithms | Weight space |
 |---|---|---|
 | Finite (discrete) | UCB, Softmax, EXP3, Thompson Sampling | 11 discrete weights 0.0–1.0 |
-| Continuous | HOO, LG-HOO, Zooming | continuous `w ∈ [0,1]` |
+| Continuous | HOO, Zooming | continuous `w ∈ [0,1]` |
 | Contextual | LinUCB, Linear Thompson Sampling | discrete weights + random context |
 
 ## Quick start
@@ -67,8 +67,9 @@ wrappers.py             # observation / episode wrappers
 
 # Bandit algorithms (canonical, one per method):
 Softmax.py  UCB.py  EXP3.py              # finite
-hoo.py  lghoo.py  Run_zoom.py            # continuous (HOO, LG-HOO, Zooming)
-algorithms.py                            # vendored Zooming impl (Lipschitz bandits)
+hoo.py                                   # continuous: HOO
+lghoo.py                                 #   LG-HOO = memory/compute-efficient HOO implementation
+Run_zoom.py  algorithms.py               # continuous: Zooming (impl vendored in algorithms.py)
 LinUCB_Final.py  LinTS.py                # contextual
 ```
 
