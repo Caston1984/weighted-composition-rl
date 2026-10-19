@@ -90,14 +90,14 @@ described in the paper (Section 5.3); this is intentional and preserved.
 
 ## How to cite
 
-This repository is the companion code for:
+This repository contains the companion code for the following paper:
 
-> *Weighted composition for entropy-regularised reinforcement learning.*
-> ORiON (Journal of the Operations Research Society of South Africa).
-> DOI: [10.5784/41-2-784](https://doi.org/10.5784/41-2-784) ·
-> Article: https://orion.journals.ac.za/pub/article/view/784
+> Caston Nyabadza, Benjamin Rosman, Steven James, and Geraud Nangue Tasse.  
+> *Weighted composition for entropy-regularised reinforcement learning.*  
+> *ORiON: Journal of the Operations Research Society of South Africa*, 41(2), 2026.  
+> DOI: [10.5784/41-2-784](https://doi.org/10.5784/41-2-784) · [View the published article](https://orion.journals.ac.za/pub/article/view/784).
 
-BibTeX (fill in the author list / year from the published version):
+If you use this code in your research, please cite the paper:
 
 ```bibtex
 @article{nyabadza2026weighted,
@@ -112,11 +112,8 @@ BibTeX (fill in the author list / year from the published version):
 }
 ```
 
-If you use this code, please cite the paper above.
-
 ## Credits
 
-The weighted-composition method builds on van Niekerk et al., *Will it blend?
-Composing value functions in reinforcement learning* (2018), and the broader
-bandit literature cited in the paper. This repository is the experimental code
-accompanying the ORiON article.
+The weighted-composition method builds on van Niekerk et al., *Will it blend? Composing value functions in reinforcement learning* (2018), and the broader bandit literature cited in the paper.
+
+This repository contains the experimental code accompanying the ORiON article.
